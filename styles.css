@@ -12,7 +12,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Estilos del header */
@@ -23,7 +30,7 @@ header {
     padding: var(--header-padding);
     background-color: var(--primary-color);
     color: var(--text-color);
-    min-height: 60px;  /* Asegura que el header no se colapse en pantallas pequeñas */
+    min-height: 60px;
 }
 
 /* Navegación izquierda */
@@ -49,8 +56,8 @@ nav a:hover {
 /* Logo centro */
 .logo {
     display: flex;
-    justify-content: center; /* Centrado del logo */
-    margin-left: -150px; /* Mueve el logo a la izquierda */
+    justify-content: center;
+    margin-left: -150px;
 }
 
 .logo img {
@@ -75,14 +82,13 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Menú hamburguesa (oculto por defecto en pantallas grandes) */
+/* Menú hamburguesa */
 .menu-toggle {
-    display: none; /* Oculto en pantallas grandes por defecto */
+    display: none;
 }
 
-/* Estilo para el checkbox invisible */
 .menu-checkbox {
-    display: none; /* Oculta el checkbox */
+    display: none;
 }
 
 /* Responsive para pantallas pequeñas */
@@ -103,16 +109,14 @@ nav a:hover {
         height: 22px;
     }
 
-    /* Mostrar el menú hamburguesa solo en pantallas pequeñas */
     .menu-toggle {
-        display: block; /* Muestra el menú hamburguesa */
+        display: block;
     }
 
     .menu-toggle img {
-        width: 30px;  /* Ajusta el tamaño del icono del menú */
+        width: 30px;
     }
 
-    /* Menú oculto por defecto en pantallas pequeñas */
     nav {
         position: absolute;
         top: 60px;
@@ -120,20 +124,17 @@ nav a:hover {
         width: 100%;
         background-color: var(--primary-color);
         text-align: center;
-        display: none;  /* Oculto por defecto */
+        display: none;
     }
 
-    /* Mostrar el menú cuando el checkbox esté marcado */
     .menu-checkbox:checked + #nav-menu {
-        display: block;  /* Muestra el menú */
+        display: block;
     }
 
-    /* Estilo para los enlaces de texto */
     nav ul {
         display: block;
     }
 
-    /* Iconos más pequeños en pantallas pequeñas */
     .right-icons img {
         height: 20px;
     }
@@ -142,47 +143,92 @@ nav a:hover {
 /* Menú de navegación visible solo en pantallas grandes */
 @media (min-width: 851px) {
     nav {
-        display: flex;  /* Muestra el menú de navegación en pantallas grandes */
-        position: relative; /* El menú se muestra de forma estática */
+        display: flex;
+        position: relative;
     }
 
-    /* Ocultar el icono hamburguesa en pantallas grandes */
     .menu-toggle {
-        display: none;  /* Asegura que el menú hamburguesa no se vea en pantallas grandes */
+        display: none;
     }
 
     nav ul {
-        flex-direction: row;  /* Los enlaces se muestran en una fila horizontal */
+        flex-direction: row;
     }
 
     .logo {
-        margin-right: 0;  /* El logo se alinea normalmente */
+        margin-right: 0;
     }
 }
 
-/* Limitar el ancho mínimo de la pantalla */
+/* Evita desbordamiento en pantallas pequeñas */
 @media (max-width: 390px) {
     body {
-        overflow-x: hidden; /* Evita que se desplace horizontalmente */
+        overflow-x: hidden;
     }
 
     header {
-        padding: var(--header-padding); /* Ajusta el padding del header si es necesario */
+        padding: var(--header-padding);
     }
 
     .logo img {
-        height: 50px; /* Reduce el tamaño del logo para pantallas pequeñas */
+        height: 50px;
     }
 
     .menu-toggle img {
-        width: 25px; /* Ajusta el tamaño del icono de menú */
+        width: 25px;
     }
 
     .right-icons img {
-        height: 18px; /* Ajusta el tamaño de los iconos a la derecha */
+        height: 18px;
     }
 
     nav ul {
-        gap: 10px; /* Reduce el espacio entre los elementos del menú */
+        gap: 10px;
     }
+}
+
+/* Estilos de secciones */
+.red-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0;
+}
+
+.red-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sección con fondo verde */
+.green-section {
+    background-color: rgb(0, 255, 55);
+    padding: 150px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Sección con fondo azul */
+.blue-section {
+    background-color: rgb(76, 0, 255);
+    padding: 150px;
+    text-align: center;
+    color: #fff;
+}
+.image-container {
+    position: relative;
+    display: grid;
+    place-items: center; /* Centra el contenido */
+}
+
+.image-text {
+    position: absolute;
+    left: 5%; /* Ajusta la posición a la izquierda */
+    top: 75%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 5px;
 }
