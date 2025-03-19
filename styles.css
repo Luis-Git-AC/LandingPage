@@ -1,0 +1,188 @@
+/* Variables CSS */
+:root {
+    --primary-color: #000;  /* Negro Mercedes */
+    --text-color: #fff;
+    --hover-color: #bbb;
+    --font-size: 15px;
+    --header-padding: 15px 25px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--header-padding);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    min-height: 60px;  /* Asegura que el header no se colapse en pantallas pequeñas */
+}
+
+/* Navegación izquierda */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: var(--font-size);
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--hover-color);
+}
+
+/* Logo centro */
+.logo {
+    display: flex;
+    justify-content: center; /* Centrado del logo */
+    margin-left: -150px; /* Mueve el logo a la izquierda */
+}
+
+.logo img {
+    height: 75px;
+    max-width: 100%;
+}
+
+/* Iconos derecha */
+.right-icons {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.right-icons img {
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.right-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Menú hamburguesa (oculto por defecto en pantallas grandes) */
+.menu-toggle {
+    display: none; /* Oculto en pantallas grandes por defecto */
+}
+
+/* Estilo para el checkbox invisible */
+.menu-checkbox {
+    display: none; /* Oculta el checkbox */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 850px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .right-icons img {
+        height: 22px;
+    }
+
+    /* Mostrar el menú hamburguesa solo en pantallas pequeñas */
+    .menu-toggle {
+        display: block; /* Muestra el menú hamburguesa */
+    }
+
+    .menu-toggle img {
+        width: 30px;  /* Ajusta el tamaño del icono del menú */
+    }
+
+    /* Menú oculto por defecto en pantallas pequeñas */
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        text-align: center;
+        display: none;  /* Oculto por defecto */
+    }
+
+    /* Mostrar el menú cuando el checkbox esté marcado */
+    .menu-checkbox:checked + #nav-menu {
+        display: block;  /* Muestra el menú */
+    }
+
+    /* Estilo para los enlaces de texto */
+    nav ul {
+        display: block;
+    }
+
+    /* Iconos más pequeños en pantallas pequeñas */
+    .right-icons img {
+        height: 20px;
+    }
+}
+
+/* Menú de navegación visible solo en pantallas grandes */
+@media (min-width: 851px) {
+    nav {
+        display: flex;  /* Muestra el menú de navegación en pantallas grandes */
+        position: relative; /* El menú se muestra de forma estática */
+    }
+
+    /* Ocultar el icono hamburguesa en pantallas grandes */
+    .menu-toggle {
+        display: none;  /* Asegura que el menú hamburguesa no se vea en pantallas grandes */
+    }
+
+    nav ul {
+        flex-direction: row;  /* Los enlaces se muestran en una fila horizontal */
+    }
+
+    .logo {
+        margin-right: 0;  /* El logo se alinea normalmente */
+    }
+}
+
+/* Limitar el ancho mínimo de la pantalla */
+@media (max-width: 390px) {
+    body {
+        overflow-x: hidden; /* Evita que se desplace horizontalmente */
+    }
+
+    header {
+        padding: var(--header-padding); /* Ajusta el padding del header si es necesario */
+    }
+
+    .logo img {
+        height: 50px; /* Reduce el tamaño del logo para pantallas pequeñas */
+    }
+
+    .menu-toggle img {
+        width: 25px; /* Ajusta el tamaño del icono de menú */
+    }
+
+    .right-icons img {
+        height: 18px; /* Ajusta el tamaño de los iconos a la derecha */
+    }
+
+    nav ul {
+        gap: 10px; /* Reduce el espacio entre los elementos del menú */
+    }
+}
