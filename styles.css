@@ -527,13 +527,14 @@ nav a:hover {
     gap: 16px; /* Espacio entre las tarjetas */
     padding: 16px;
     scrollbar-width: thin; /* Estilo del scrollbar en navegadores compatibles */
+    background-color: #000000;
   }
   
   .card {
     min-width: 300px; /* Aumenta el tamaño mínimo de las tarjetas */
     max-width: 400px; /* Limita el ancho máximo de las tarjetas */
-    background-color: #f0f0f0;
-    border-radius: 8px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 0px;
     padding: 32px; /* Aumenta el padding para hacer las tarjetas más grandes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
