@@ -407,3 +407,46 @@ nav a:hover {
 .btn-map:hover {
     background-color: #0056b3;
 }
+
+/* Nueva clase para el texto */
+.special-text {
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 30%; /* Ajusta la posición desde el fondo */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Alinea el texto exactamente en el centro */
+    color: #ffffff; /* Color blanco para el texto */
+    font-size: 5vw; /* Usa un tamaño de fuente relativo basado en el ancho de la ventana */
+    font-weight: bold; /* Peso de fuente más fuerte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Agrega sombra al texto */
+    text-align: center; /* Alinea el texto al centro */
+    width: 80%; /* Ancho del texto */
+    max-width: 600px; /* Maxima anchura */
+    line-height: 1.4; /* Espaciado entre líneas */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .special-text {
+        font-size: 6vw; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+        bottom: 10px; /* Reduce la distancia inferior */
+    }
+}
+
+/* Media query para pantallas aún más pequeñas (por ejemplo, teléfonos) */
+@media (max-width: 480px) {
+    .special-text {
+        font-size: 8vw; /* Ajusta aún más el tamaño del texto */
+        bottom: 5px; /* Reduce aún más la distancia inferior */
+    }
+}
+.Mercedes-Furgo {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block; /* Hace que la imagen se comporte como un bloque */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.Mercedes-Furgo:hover {
+    transform: scale(1.05);  /* Aumenta ligeramente el tamaño de la imagen */
+    opacity: 0.9;  /* Reduce la opacidad para un efecto de atenuado */
+}
