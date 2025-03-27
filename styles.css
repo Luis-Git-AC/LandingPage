@@ -483,11 +483,12 @@ nav a:hover {
 .scroll-container {
     display: flex;
     overflow-x: auto; 
-    gap: 16px; 
+    gap: 50px; 
     padding: 16px;
     scrollbar-width: thin; 
     background-color: var(--primary-color); /* Usando variable para color de fondo */
 }
+
 
 .card {
     min-width: 300px; 
