@@ -275,6 +275,7 @@ nav a:hover {
     background-color: var(--button-hover-background); /* Usando variable para fondo de botón al hover */
 }
 
+/* ======================= FOOTER ======================= */
 .footer {
     background-color: var(--footer-background); /* Usando variable para fondo del footer */
     color: var(--footer-text-color); /* Usando variable para color de texto del footer */
@@ -282,17 +283,45 @@ nav a:hover {
     margin-top: 0px;
 }
 
+/* MODIFICADO: Cambiamos el layout del footer a flex en fila y reordenamos sus elementos */
 .footer-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;  /* Cambio de columna a fila */
     align-items: center;
-    text-align: center;
+    justify-content: space-between;  /* Distribuye los elementos en el eje horizontal */
+    text-align: center; /* Opcional, puede ajustarse según se requiera */
 }
 
+/* Reordenamos los elementos hijos del footer */
+/* Colocamos los links a la izquierda */
+.footer-links {
+    order: 1;  /* Enlaces a la izquierda */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Colocamos el párrafo (copyright) en el centro */
+.footer-content > p {
+    order: 2;  /* Copyright en el centro */
+    flex-grow: 1;
+}
+
+/* Colocamos el formulario a la derecha */
+.email-signup {
+    order: 3;  /* Formulario a la derecha */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos del párrafo en el footer */
 .footer p {
     margin: 10px 0;
 }
 
+/* Enlaces en el footer */
 .footer a {
     color: var(--footer-text-color); /* Usando variable para color de texto del footer */
     text-decoration: none;
@@ -303,27 +332,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 10px;
-}
+/* ================= ESTILOS PARA EL FORMULARIO DE SUSCRIPCIÓN ================= */
 
-.email-signup {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.email-label {
-    color: var(--footer-text-color); /* Usando variable para color de texto del footer */
-    font-size: 14px;
-    margin-right: 10px;
-}
-
+/* Estilos para el input del formulario */
 .email-signup input {
     padding: 10px;
     font-size: 14px;
@@ -332,6 +343,7 @@ nav a:hover {
     width: 250px;
 }
 
+/* NUEVO: Estilo específico para el botón del formulario */
 .email-signup button {
     padding: 10px 15px;
     background-color: var(--button-background); /* Usando variable para fondo de botón */
@@ -340,11 +352,15 @@ nav a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Efecto hover para el botón */
 .email-signup button:hover {
     background-color: var(--button-hover-background); /* Usando variable para fondo de botón al hover */
 }
+
+/* ======================= FIN FOOTER ======================= */
 
 .image-container {
     position: relative;
