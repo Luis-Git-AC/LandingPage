@@ -20,6 +20,10 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+html, body {
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
 .container {
     max-width: 1920px;
     margin: 0 auto;
@@ -160,10 +164,6 @@ nav a:hover {
 }
 
 @media (max-width: 390px) {
-    body {
-        overflow-x: hidden;
-    }
-
     header {
         padding: var(--header-padding); /* Usando variable para padding */
     }
@@ -350,6 +350,7 @@ nav a:hover {
     position: relative;
     display: grid;
     place-items: center; 
+    overflow: hidden; /* Evita el desplazamiento */
 }
 
 .image-text {
